@@ -7,20 +7,22 @@ let listaDeNombres = [];
 //Variable para guardar numero aleatorio
 let subIndiceAmigos = 0;
 //Definicion de funciones
-//Funcion que agrega el amigo
-function agregarAmigo(){
-    validarNombre()
-}
+
 //Funcion validacion de nombre ingresado
 function validarNombre(){
      nombre = document.querySelector("#amigo").value;
-    if (trim(nombre) !=""){
+    if (nombre.trim() !=""){
         ingresarNombre(nombre);
-    }else alert("Ingrese nombre valido")
+    }else {alert("Ingrese nombre valido")
+    }
 }
 //Funcion ingresar nombre
 function ingresarNombre() {
     listaDeNombres.push(nombre);
+}
+//Funcion que agrega el amigo
+function agregarAmigo(){
+    validarNombre()
 }
 //Funcion muestra lista de nombres ingresados en pantalla
 //Funcion sortea Amigo Secreto
