@@ -4,6 +4,10 @@
 let nombre = "";
 //Variable para ingresar nombres
 let listaDeNombres = [];
+//variable para seleccionar Elemento del HTML
+let listaEscribirNombresGuardado = "";
+//variable para guardar los elementos a escribir
+let listaDeNombresGuardado = ""
 //Variable para guardar numero aleatorio
 let subIndiceAmigos = 0;
 //Definicion de funciones
@@ -17,13 +21,24 @@ function validarNombre(){
     }
 }
 //Funcion ingresar nombre
-function ingresarNombre() {
+function ingresarNombre(nombre) {
     listaDeNombres.push(nombre);
+    mostrarNombre();
 }
 //Funcion que agrega el amigo
 function agregarAmigo(){
-    validarNombre()
+    validarNombre();
 }
 //Funcion muestra lista de nombres ingresados en pantalla
+function mostrarNombre(){
+     listaEscribirNombresGuardado = document.querySelector('#listaAmigos');
+    for (let i = 0;
+        i < listaDeNombres.length;
+        i++)
+    { listaEscribirNombresGuardado.innerHTML = listaDeNombres[i];
+    }
+        
+}
+
 //Funcion sortea Amigo Secreto
 //Funcion genera numero aleatorio
