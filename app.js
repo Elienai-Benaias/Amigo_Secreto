@@ -1,7 +1,5 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 //Definicion de variables
-//varible para ingresar el nombre que entrega el usuario
-let nombre = "";
 //Variable para ingresar nombres
 let listaDeNombres = [];
 //variable para seleccionar Elemento del HTML
@@ -14,9 +12,10 @@ let subIndiceAmigos = 0;
 
 //Funcion validacion de nombre ingresado
 function validarNombre(){
-     nombre = document.querySelector("#amigo").value;
+     let nombre = document.querySelector("#amigo").value;
     if (nombre.trim() !=""){
         ingresarNombre(nombre);
+        document.querySelector("#amigo").value = "";
     }else {alert("Ingrese nombre valido")
     }
 }
@@ -32,12 +31,11 @@ function agregarAmigo(){
 //Funcion muestra lista de nombres ingresados en pantalla
 function mostrarNombre(){
      listaEscribirNombresGuardado = document.querySelector('#listaAmigos');
-    for (let i = 0;
-        i < listaDeNombres.length;
-        i++)
-    { listaEscribirNombresGuardado.innerHTML = listaDeNombres[i];
+    for (let i = 0; i < listaDeNombres.length; i++)
+    { listaDeNombresGuardado +=`<li>${listaDeNombres[i]}<li>`;
     }
-        
+ listaEscribirNombresGuardado.innerHTML = listaDeNombresGuardado;   
+ listaDeNombresGuardado = "";    
 }
 
 //Funcion sortea Amigo Secreto
