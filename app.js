@@ -8,6 +8,8 @@ let listaEscribirNombresGuardado = "";
 let listaDeNombresGuardado = ""
 //Variable para guardar numero aleatorio
 let subIndiceAmigos = 0;
+//variable para guardar amigo secreto
+let amigoSecreto = "";
 //Definicion de funciones
 
 //Funcion validacion de nombre ingresado
@@ -39,4 +41,15 @@ function mostrarNombre(){
 }
 
 //Funcion sortea Amigo Secreto
+function sortearAmigo(){
+     amigoSecreto = listaDeNombres[numeroAleatorio()];
+     listaDeNombresGuardado = "";
+     listaDeNombresGuardado = amigoSecreto;
+     listaEscribirNombresGuardado.innerHTML = listaDeNombresGuardado;
+     listaDeNombresGuardado="";
+}
 //Funcion genera numero aleatorio
+function numeroAleatorio(){
+    subIndiceAmigos = Math.floor(Math.random()*listaDeNombres.length);
+    return subIndiceAmigos;
+}
